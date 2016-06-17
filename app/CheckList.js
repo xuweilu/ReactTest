@@ -1,7 +1,7 @@
 /**
  * Created by xuwei on 2016/6/15.
  */
-import React,{ Component } from 'react';
+import React,{ Component, PropTypes } from 'react';
 class CheckList extends Component{
 	checkInputKeyPress(evt){
 		if(evt.key === 'Enter'){
@@ -14,7 +14,7 @@ class CheckList extends Component{
 			<li key={task.id} className="checklist__task">
 				<input type="checkbox" checked={task.done} onChange={this.props.taskCallbacks.toggle.bind(null, this.props.cardId, task.id, taskIndex)} />
 				{task.name}{' '}
-				<a href="#" className="checklist__task--remove" onClick={this.props.taskCallbacks.delete.bind(null, this.props.cardId, task.id, taskIndex)} ></a>
+				<a href="#" className="checklist__task--remove" onClick={this.props.taskCallbacks.delete.bind(null, this.props.cardId, task.id, taskIndex)} />
 			</li>
 		));
 		return(
